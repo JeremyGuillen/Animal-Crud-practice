@@ -1,0 +1,64 @@
+{
+    "pets": [
+      {
+        "name": "Max",
+        "breed": "Labrador Retriever",
+        "birthdate": "2017-05-12",
+        "gender": "Male"
+      },
+      {
+        "name": "Bella",
+        "breed": "German Shepherd",
+        "birthdate": "2018-02-28",
+        "gender": "Female"
+      },
+      {
+        "name": "Charlie",
+        "breed": "Golden Retriever",
+        "birthdate": "2016-09-05",
+        "gender": "Male"
+      },
+      {
+        "name": "Lucy",
+        "breed": "Bulldog",
+        "birthdate": "2019-07-19",
+        "gender": "Female"
+      },
+      {
+        "name": "Cooper",
+        "breed": "Beagle",
+        "birthdate": "2015-11-30",
+        "gender": "Male"
+      },
+      {
+        "name": "Luna",
+        "breed": "Poodle",
+        "birthdate": "2017-03-17",
+        "gender": "Female"
+      },
+      {
+        "name": "Max",
+        "breed": "Siberian Husky",
+        "birthdate": "2018-08-10",
+        "gender": "Male"
+      },
+      {
+        "name": "Daisy",
+        "breed": "Boxer",
+        "birthdate": "2016-01-25",
+        "gender": "Female"
+      },
+      {
+        "name": "Rocky",
+        "breed": "Rottweiler",
+        "birthdate": "2019-04-03",
+        "gender": "Male"
+      },
+      {
+        "name": "Sadie",
+        "breed": "Chihuahua",
+        "birthdate": "2017-10-21",
+        "gender": "Female"
+      }
+    ]
+}

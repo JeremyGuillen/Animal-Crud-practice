@@ -1,0 +1,25 @@
+<main class="app">
+    <section class="table">
+    <h2>Animals List</h2>
+    <nz-table #petsTable [nzData]="pets">
+        <thead>
+        <tr>
+            <th>Check</th>
+            <th>Name</th>
+            <th>Breed</th>
+            <th>Birthdate</th>
+            <th>Gender</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let pet of petsTable.data">
+            <td [nzChecked]="setOfCheckedId.has(pet.id)" (nzCheckedChange)="onItemChecked(pet.id, $event)"></td>
+            <td>{{pet.name}}</td>
+            <td>{{pet.breed}}</td>
+            <td>{{pet.birthdate}}</td>
+            <td>{{pet.gender}}</td>
+        </tr>
+        </tbody>
+    </nz-table>
+    </section>
+</main>

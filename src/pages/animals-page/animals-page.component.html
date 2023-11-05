@@ -1,5 +1,44 @@
 <main class="app">
     <section class="table">
+        <nz-drawer [nzClosable]="false" [nzVisible]="showEdit" nzPlacement="right" nzTitle="Add Pet" (nzOnClose)="onCloseDrawer()">
+            <form nz-form *nzDrawerContent [formGroup]="petForm" (ngSubmit)="onSubmitForm()">
+                <nz-form-item>
+                    <nz-form-label>Name</nz-form-label>
+                    <nz-form-control>
+                        <input nz-input placeholder="Pet name"  formControlName="name"/>
+                    </nz-form-control>
+                </nz-form-item>
+                <nz-form-item>
+                    <nz-form-label>Breed</nz-form-label>
+                    <nz-form-control>
+                        <input nz-input placeholder="Breed"  formControlName="breed"/>
+                    </nz-form-control>
+                </nz-form-item>
+                <nz-form-item>
+                    <nz-form-label>Birthdate</nz-form-label>
+                    <nz-form-control>
+                        <nz-date-picker style="width: 100%;" placeholder="Birthdate"  formControlName="birthdate"/>
+                    </nz-form-control>
+                </nz-form-item>
+                <nz-form-item>
+                    <nz-form-label>Gender</nz-form-label>
+                    <nz-form-control>
+                       <nz-select nzPlaceHolder="Gender" formControlName="gender">
+                        <nz-option nzValue="Male" nzLabel="Male"></nz-option>
+                        <nz-option nzValue="Female" nzLabel="Female"></nz-option>
+                       </nz-select>
+                    </nz-form-control>
+                </nz-form-item>
+                <div class="buttons-container">
+                    <button nz-button (click)="onCloseDrawer()">Cancel</button>
+                    <nz-form-item>
+                        <nz-form-control>
+                            <button nz-button nzType="primary" type="submit">Save</button>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+            </form>
+        </nz-drawer>
         <div class="title-container">
             <h2>Animals List</h2>
             <button nz-button nz-dropdown [nzDropdownMenu]="menu" [nzTrigger]="'click'">

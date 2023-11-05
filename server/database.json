@@ -62,6 +62,20 @@
       "breed": "Chihuahua",
       "birthdate": "2017-10-21",
       "gender": "Female"
+    },
+    {
+      "breed": "test",
+      "gender": "Male",
+      "name": "test",
+      "birthdate": "Sun Nov 05 2023 15:40:56 GMT-0600 (Central Standard Time)",
+      "id": 11
+    },
+    {
+      "breed": "test",
+      "gender": "Male",
+      "name": "test",
+      "birthdate": "05-11-2023",
+      "id": 12
     }
   ]
 }

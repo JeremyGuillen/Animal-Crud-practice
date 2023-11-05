@@ -16,6 +16,12 @@ import { LayoutModule } from 'src/components/layout/layout.module';
 import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzDrawerModule } from 'ng-zorro-antd/drawer';
+import { NzFormModule } from 'ng-zorro-antd/form';
+import {NzInputModule} from 'ng-zorro-antd/input';
+import {NzSelectModule} from 'ng-zorro-antd/select';
+import {NzDatePickerModule} from 'ng-zorro-antd/date-picker';
+import { ReactiveFormsModule } from '@angular/forms';
 registerLocaleData(en);
 
 @NgModule({
@@ -33,7 +39,13 @@ registerLocaleData(en);
     LayoutModule,
     NzDropDownModule,
     NzButtonModule,
-    NzIconModule
+    NzIconModule,
+    NzDrawerModule,
+    NzFormModule,
+    NzSelectModule,
+    NzInputModule,
+    NzDatePickerModule,
+    ReactiveFormsModule
   ],
   providers: [
     { provide: NZ_I18N, useValue: en_US }

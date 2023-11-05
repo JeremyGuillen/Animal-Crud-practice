@@ -13,4 +13,12 @@ export class PetsService {
     deletePets(id: number) {
         return this.httpClient.delete(`${environment.api_base_url}/pets/${id}`);
     }
+
+    addPet(pet: Pet) {
+        return this.httpClient.post(`${environment.api_base_url}/pets`, pet);
+    }
+
+    editPet(pet: Pet) {
+        return this.httpClient.put(`${environment.api_base_url}/pets/${pet.id}`, pet);
+    }
 }

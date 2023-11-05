@@ -1,25 +1,38 @@
 <main class="app">
     <section class="table">
-    <h2>Animals List</h2>
-    <nz-table #petsTable [nzData]="pets">
-        <thead>
-        <tr>
-            <th>Check</th>
-            <th>Name</th>
-            <th>Breed</th>
-            <th>Birthdate</th>
-            <th>Gender</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr *ngFor="let pet of petsTable.data">
-            <td [nzChecked]="setOfCheckedId.has(pet.id)" (nzCheckedChange)="onItemChecked(pet.id, $event)"></td>
-            <td>{{pet.name}}</td>
-            <td>{{pet.breed}}</td>
-            <td>{{pet.birthdate}}</td>
-            <td>{{pet.gender}}</td>
-        </tr>
-        </tbody>
-    </nz-table>
+        <div class="title-container">
+            <h2>Animals List</h2>
+            <button nz-button nz-dropdown [nzDropdownMenu]="menu" [nzTrigger]="'click'">
+                Actions
+                <span nz-icon nzType="down"></span>
+            </button>
+            <nz-dropdown-menu #menu="nzDropdownMenu">
+                <ul nz-menu>
+                    <li nz-menu-item [nzDisabled]="setOfCheckedId.size === 0 || setOfCheckedId.size === 2">Edit</li>
+                    <li nz-menu-item>Add Pet</li>
+                    <li nz-menu-item [nzDisabled]="setOfCheckedId.size === 0 || setOfCheckedId.size === 2">Delete Pet</li>
+                </ul>
+            </nz-dropdown-menu>
+        </div>
+        <nz-table #petsTable [nzData]="pets">
+            <thead>
+            <tr>
+                <th>Check</th>
+                <th>Name</th>
+                <th>Breed</th>
+                <th>Birthdate</th>
+                <th>Gender</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let pet of petsTable.data">
+                <td [nzChecked]="setOfCheckedId.has(pet.id)" (nzCheckedChange)="onItemChecked(pet.id, $event)"></td>
+                <td>{{pet.name}}</td>
+                <td>{{pet.breed}}</td>
+                <td>{{pet.birthdate}}</td>
+                <td>{{pet.gender}}</td>
+            </tr>
+            </tbody>
+        </nz-table>
     </section>
 </main>

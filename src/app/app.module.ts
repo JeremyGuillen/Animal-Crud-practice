@@ -13,6 +13,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {NzTableModule} from 'ng-zorro-antd/table';
 import { AnimalsPageComponent } from 'src/pages/animals-page/animals-page.component';
 import { LayoutModule } from 'src/components/layout/layout.module';
+import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzIconModule } from 'ng-zorro-antd/icon';
 registerLocaleData(en);
 
 @NgModule({
@@ -28,6 +31,9 @@ registerLocaleData(en);
     BrowserAnimationsModule,
     NzTableModule,
     LayoutModule,
+    NzDropDownModule,
+    NzButtonModule,
+    NzIconModule
   ],
   providers: [
     { provide: NZ_I18N, useValue: en_US }

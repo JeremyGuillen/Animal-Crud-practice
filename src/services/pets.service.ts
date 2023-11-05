@@ -9,4 +9,8 @@ export class PetsService {
     getPets() {
         return this.httpClient.get<Pet[]>(`${environment.api_base_url}/pets`);
     }
+
+    deletePets(id: number) {
+        return this.httpClient.delete(`${environment.api_base_url}/pets/${id}`);
+    }
 }

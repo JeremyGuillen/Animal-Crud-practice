@@ -18,14 +18,29 @@ export class AnimalsPageComponent {
 
   getPets() {
     this.petsService.getPets().subscribe((pets) => {
-      this.pets = pets.map((p, index) => {
-        return {
-          ...p,
-          id: index
-        }
-      });
-      console.log(this.pets);
+      this.pets = pets;
     });
+  }
+
+  onDeleteClick() {
+    if (this.setOfCheckedId.size === 1) {
+      this.setOfCheckedId.forEach(id => {
+        const petToDelete = this.pets.find((pet) => pet.id === id);
+        if (!petToDelete) return;
+        this.petsService.deletePets(petToDelete.id).subscribe((response) => {
+          console.log(response);
+          this.getPets();
+        });
+      });
+    }
+  }
+
+  onAddClick() {
+    console.log('Add clicked');
+  }
+
+  onEditClick() {
+    console.log('edit click');
   }
 
   updateCheckedSet(id: number, checked: boolean): void {

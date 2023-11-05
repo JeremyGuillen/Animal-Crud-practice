@@ -8,21 +8,21 @@
             </button>
             <nz-dropdown-menu #menu="nzDropdownMenu">
                 <ul nz-menu>
-                    <li nz-menu-item [nzDisabled]="setOfCheckedId.size === 0 || setOfCheckedId.size === 2">Edit</li>
-                    <li nz-menu-item>Add Pet</li>
-                    <li nz-menu-item [nzDisabled]="setOfCheckedId.size === 0 || setOfCheckedId.size === 2">Delete Pet</li>
+                    <li (click)="onEditClick()" nz-menu-item [nzDisabled]="setOfCheckedId.size === 0 || setOfCheckedId.size === 2">Edit</li>
+                    <li (click)="onAddClick()" nz-menu-item>Add Pet</li>
+                    <li (click)="onDeleteClick()" nz-menu-item [nzDisabled]="setOfCheckedId.size === 0 || setOfCheckedId.size === 2">Delete Pet</li>
                 </ul>
             </nz-dropdown-menu>
         </div>
         <nz-table #petsTable [nzData]="pets">
             <thead>
-            <tr>
-                <th>Check</th>
-                <th>Name</th>
-                <th>Breed</th>
-                <th>Birthdate</th>
-                <th>Gender</th>
-            </tr>
+                <tr>
+                    <th>Check</th>
+                    <th>Name</th>
+                    <th>Breed</th>
+                    <th>Birthdate</th>
+                    <th>Gender</th>
+                </tr>
             </thead>
             <tbody>
             <tr *ngFor="let pet of petsTable.data">

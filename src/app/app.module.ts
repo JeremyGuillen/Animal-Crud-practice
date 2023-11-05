@@ -11,13 +11,14 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {NzTableModule} from 'ng-zorro-antd/table';
-import {NzLayoutModule} from 'ng-zorro-antd/layout';
-
+import { AnimalsPageComponent } from 'src/pages/animals-page/animals-page.component';
+import { LayoutModule } from 'src/components/layout/layout.module';
 registerLocaleData(en);
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AnimalsPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -26,7 +27,7 @@ registerLocaleData(en);
     HttpClientModule,
     BrowserAnimationsModule,
     NzTableModule,
-    NzLayoutModule,
+    LayoutModule,
   ],
   providers: [
     { provide: NZ_I18N, useValue: en_US }

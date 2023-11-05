@@ -12,6 +12,7 @@ export class AnimalsPageComponent {
   pets: Pet[] = [];
   setOfCheckedId = new Set<number>();
   showEdit = false;
+  title: 'Edit animal' | 'Add animal' = 'Add animal';
   petToEdit: Pet | undefined;
   mode: 'edit' | 'create' = 'create';
   petForm = this.fb.group({
@@ -48,7 +49,7 @@ export class AnimalsPageComponent {
   onAddClick() {
     this.showEdit = true;
     this.mode = 'create';
-    console.log('Add clicked');
+    this.title = 'Add animal';
   }
 
   onEditClick() {
@@ -62,6 +63,7 @@ export class AnimalsPageComponent {
             gender: this.petToEdit.gender,
             name: this.petToEdit.name
           });
+          this.title = 'Edit animal';
           this.mode = 'edit';
           this.showEdit = true;
         };
@@ -73,6 +75,7 @@ export class AnimalsPageComponent {
     this.petToEdit = undefined;
     this.showEdit = false;
     this.mode = 'create';
+    this.title = 'Add animal';
   }
 
   updateCheckedSet(id: number, checked: boolean): void {

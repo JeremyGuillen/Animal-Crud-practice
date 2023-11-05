@@ -1,6 +1,6 @@
 <main class="app">
     <section class="table">
-        <nz-drawer [nzClosable]="false" [nzVisible]="showEdit" nzPlacement="right" nzTitle="Add Pet" (nzOnClose)="onCloseDrawer()">
+        <nz-drawer [nzClosable]="false" [nzVisible]="showEdit" nzPlacement="right" [nzTitle]="title" (nzOnClose)="onCloseDrawer()">
             <form nz-form *nzDrawerContent [formGroup]="petForm" (ngSubmit)="onSubmitForm()">
                 <nz-form-item>
                     <nz-form-label>Name</nz-form-label>

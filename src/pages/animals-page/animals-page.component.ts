@@ -76,6 +76,7 @@ export class AnimalsPageComponent {
     this.showEdit = false;
     this.mode = 'create';
     this.title = 'Add animal';
+    this.petForm.reset();
   }
 
   updateCheckedSet(id: number, checked: boolean): void {

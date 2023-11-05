@@ -1,20 +1,6 @@
 {
   "pets": [
     {
-      "id": 2,
-      "name": "Bella",
-      "breed": "German Shepherd",
-      "birthdate": "2018-02-28",
-      "gender": "Female"
-    },
-    {
-      "id": 3,
-      "name": "Charlie",
-      "breed": "Golden Retriever",
-      "birthdate": "2016-09-05",
-      "gender": "Male"
-    },
-    {
       "id": 4,
       "name": "Lucy",
       "breed": "Bulldog",
@@ -62,20 +48,6 @@
       "breed": "Chihuahua",
       "birthdate": "2017-10-21",
       "gender": "Female"
-    },
-    {
-      "breed": "test",
-      "gender": "Male",
-      "name": "test",
-      "birthdate": "Sun Nov 05 2023 15:40:56 GMT-0600 (Central Standard Time)",
-      "id": 11
-    },
-    {
-      "breed": "test",
-      "gender": "Male",
-      "name": "test",
-      "birthdate": "05-11-2023",
-      "id": 12
     }
   ]
 }

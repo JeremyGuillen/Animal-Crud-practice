@@ -12,6 +12,7 @@ export class AnimalsPageComponent {
   pets: Pet[] = [];
   setOfCheckedId = new Set<number>();
   showEdit = false;
+  petToEdit: Pet | undefined;
   mode: 'edit' | 'create' = 'create';
   petForm = this.fb.group({
     name: ['', [Validators.required]],
@@ -28,6 +29,7 @@ export class AnimalsPageComponent {
   getPets() {
     this.petsService.getPets().subscribe((pets) => {
       this.pets = pets;
+      this.setOfCheckedId.clear();
     });
   }
 
@@ -37,7 +39,6 @@ export class AnimalsPageComponent {
         const petToDelete = this.pets.find((pet) => pet.id === id);
         if (!petToDelete) return;
         this.petsService.deletePets(petToDelete.id).subscribe((response) => {
-          console.log(response);
           this.getPets();
         });
       });
@@ -51,12 +52,25 @@ export class AnimalsPageComponent {
   }
 
   onEditClick() {
-    this.showEdit = true;
-    this.mode = 'edit';
-    console.log('edit click');
+    if (this.setOfCheckedId.size === 1) {
+      this.setOfCheckedId.forEach(id => {
+        this.petToEdit = this.pets.find((pet) => pet.id === id);
+        if (this.petToEdit) {
+          this.petForm.setValue({
+            birthdate: new Date(this.petToEdit.birthdate).toString(),
+            breed: this.petToEdit.breed,
+            gender: this.petToEdit.gender,
+            name: this.petToEdit.name
+          });
+          this.mode = 'edit';
+          this.showEdit = true;
+        };
+      });
+    }
   }
 
   onCloseDrawer() {
+    this.petToEdit = undefined;
     this.showEdit = false;
     this.mode = 'create';
   }
@@ -83,11 +97,17 @@ export class AnimalsPageComponent {
       gender: gender! as any,
       name: name!,
       birthdate: date,
-      id: this.pets.length + 2, 
+      id: this.petToEdit? this.petToEdit.id :  this.pets.length + 2, 
     };
     if (this.mode === 'create') { 
       console.log(this.petForm.value);
       this.petsService.addPet(pet).subscribe((response) => {
+        this.getPets();
+        this.onCloseDrawer();
+      })
+    } else {
+      if (!this.petToEdit) return;
+      this.petsService.editPet(pet).subscribe((Response) => {
         this.getPets();
         this.onCloseDrawer();
       })
